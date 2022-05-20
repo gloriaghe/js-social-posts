@@ -106,65 +106,12 @@ posts.forEach((element) => {
 
 document.querySelectorAll('.js-like-button').forEach(item => {
     item.addEventListener('click', event => {
-        const colorB = document.querySelector(".like-button");
+        const colorB = document.querySelectorAll(".like-button");
         
+
+            item.classList.add("like-button--liked");    
         
-        colorB.classList.add("like-button--liked");    
     })
   })
 
 
-
-    //     const addButton = document.querySelector("js-like-button");
-        
-      
-
-    //     addEventListener('click', 
-    //     function () {
-    //       let buttonColor = document.querySelectorAll(".like-button");
-            
-    //       posts.forEach((element) =>{
-    //         const colorB = document.querySelector(".like-button");
-    //         colorB.classList.add("like-button--liked");
-
-
-    //       });
-           
-    
-        
-    // });
-
-
- 
-
-
-//     const addButton = document.querySelector("js-like-button");
-        
-//     posts.forEach((element) =>{
-
-//     addEventListener('click', 
-//     function () {
-//       const coloraBottone = document.querySelector("like-button");
-//       coloraBottone.classList.add("like-button--liked");
-       
-
-//     });
-// });
-       
-
-            
-        
-
-    
-        
-    
-    
-//  posts.forEach((element) =>{
-
-//     addButton.addEventListener('click', 
-//     function () {
-//         console.log("ciao")
-//         // const coloraBottone = document.querySelectorAll("like-button");
-//         // coloraBottone.classList.add("like-button--liked");
-
-//     }) })
