@@ -2,7 +2,6 @@
 
 const stamp = document.querySelector(".posts-list");
 
-
     
 posts.forEach((element) => {
     const creatoDivPost = document.createElement("div");
@@ -106,12 +105,17 @@ posts.forEach((element) => {
 
 document.querySelectorAll('.js-like-button').forEach(item => {
     item.addEventListener('click', event => {
-        const colorB = document.querySelectorAll(".like-button");
+
+        document.querySelectorAll(".like-button");
+        item.classList.add("like-button--liked"); 
         
 
-            item.classList.add("like-button--liked");    
+            posts.likes++
+            document.querySelectorAll("b").innerHTML= 1 ;
         
-    })
+    
+    
+})
   })
 
 
