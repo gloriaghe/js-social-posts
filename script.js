@@ -46,9 +46,52 @@ posts.forEach((element) => {
     text.innerHTML = element.content;
     creatoDivPost.append(text);
 
+    //parte immagine
+
+    const imgPosts = document.createElement("div");
+    imgPosts.classList.add("post__image");
+    const imgPostArray = document.createElement("img");
+    imgPostArray.setAttribute("src", element.media);
+    imgPosts.append(imgPostArray);
+    creatoDivPost.append(imgPosts);
+
+    //footer posts
+
+    const postFooter = document.createElement("div");
+    postFooter.classList.add("post__footer");
+    const postFooterLikes = document.createElement("div");
+    postFooterLikes.classList.add("likes", "js-likes");
+    postFooter.append(postFooterLikes);
+    const likesCta = document.createElement("div");
+    likesCta.classList.add("likes__cta");
+    const likeButtonA = document.createElement("a");
+    likeButtonA.classList.add("like-button", "js-like-button");
+    likeButtonA.setAttribute("href", "#");
+    likeButtonA.setAttribute("data-postid", element.id);
+
+    const likeButton = document.createElement("i");
+    likeButton.classList.add("like-button__icon", "fas", "fa-thumbs-up");
+    likeButton.setAttribute("aria-hidden", "true");
+    const likeButtonSpan = document.createElement("span");
+    likeButtonSpan.classList.add("like-button__label");
+    likeButtonSpan.innerHTML = "Mi piace";
+    likeButtonA.append(likeButton, likeButtonSpan);
+    likesCta.append(likeButtonA);
 
 
+    const likesCounter = document.createElement("div");
+    likesCounter.classList.add("likes__counter");
+    likesCounter.append("Piace a ");
+    const counterPost = document.createElement("b");
+    counterPost.classList.add("js-likes-counter");
+    counterPost.append(element.likes);
+    likesCounter.append(counterPost, " persone");
 
+
+    likesCounter
+    postFooterLikes.append(likesCta, likesCounter);
+
+    creatoDivPost.append(postFooter);
     
     stamp.append(creatoDivPost);
 })
