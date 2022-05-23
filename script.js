@@ -37,14 +37,20 @@ posts.forEach((element) => {
 });
 //parte esercizio 3
 
- document.querySelectorAll('.like-button').forEach(item => {
+ document.querySelectorAll('.like-button').forEach((item, index) => {
      item.addEventListener('click', event => {
 
-         document.querySelectorAll(".like-button");
-         item.classList.add("like-button--liked"); 
+         document.querySelectorAll(".js-like-button");
+         item.classList.toggle("like-button--liked"); 
+         if(item.classList.contains("like-button--liked")){
+             posts[index].likes++;
+         }else{
+            posts[index].likes--;
+         }
 
-         let counter = document.querySelector(".js-likes-counter");
-        counter.append(+1); 
+
+         let counter = document.getElementById("like-counter-" + posts[index].id);
+         counter.innerText = posts[index].likes; 
    })
 
 
